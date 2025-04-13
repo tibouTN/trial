@@ -1,0 +1,62 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm px-4">
+  <a class="navbar-brand fw-bold fs-3" href="#">Sahlha</a>
+  <div class="ms-auto d-flex align-items-center">
+    <input type="text" class="form-control me-2" placeholder="Search..." />
+    <a src="./pages/forume/forume.component.html" class="btn btn-outline-secondary me-2">Login</a>
+
+    <button class="btn btn-dark">☰</button>
+  </div>
+</nav>
+
+<!-- Hero Section with Custom Image -->
+<div class="position-relative text-white">
+  <img src="assets/hero.jpg" alt="Helping Hands" class="w-100" style="max-height: 400px; object-fit: cover;" />
+
+  <div class="position-absolute top-50 start-50 translate-middle text-center">
+
+    <p class="lead fw-semibold bg-dark bg-opacity-75 p-2 rounded">
+      Welcome to Sahlha Giving is caring. Join us in supporting those in need—every donation brings hope. ❤️
+    </p>
+  </div>
+</div>
+
+<!-- Donation Cards Grid -->
+<div class="container my-5">
+  <div class="row row-cols-1 row-cols-md-4 g-4">
+    <div class="col" *ngFor="let card of cards; let i = index">
+      <div class="card h-100 text-center position-relative">
+        <img src="https://via.placeholder.com/150" class="card-img-top" alt="Donation" />
+        <div class="card-body">
+          <h5 class="card-title">Test</h5>
+          <p class="card-text">Test</p>
+        </div>
+        <div class="card-footer d-flex justify-content-between align-items-center">
+          <button class="btn btn-outline-primary btn-sm" (click)="decrease(i)">−</button>
+          <span>{{ card.quantity }}</span>
+          <button class="btn btn-outline-primary btn-sm" (click)="increase(i)">+</button>
+        </div>
+
+        <!-- Upload Button -->
+        <button
+          class="btn btn-outline-secondary btn-sm position-absolute"
+          style="bottom: 10px; right: 10px"
+          (click)="upload(card)"
+        >
+          <i class="bi bi-upload"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-light text-center p-4">
+  <p class="small">
+    Ce site est destiné à sensibiliser sur les dons. Toute aide est la bienvenue 💖
+  </p>
+  <div class="d-flex justify-content-center gap-4">
+    <a href="#">🌐 sahlha</a>
+    <a href="#">📘 sahlha</a>
+    <a href="#">📸 sahlha</a>
+  </div>
+</footer>
